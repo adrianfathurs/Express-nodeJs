@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="header-logo" href="/">LIST</a>
+    </header>
+    <% const item=[ {id:1,name:'Laos'},{id:2,name:'Cabe'},{id:3,name:'Bawang merah'}]%>
+    <div class="container">
+      <div class="container-header">
+        <h1>Daftar Belanjaan</h1>
+      </div>
+      <div class="index-table-wrapper">
+        <div class="table-head">
+          <span class="id-column">ID</span>
+          <span>Item</span>
+        </div>
+        <ul class="table-body">
+          <% for(var i =0;i< item.length;i++) {%>
+          <li>
+            <span class="id-column"><%= item[i].id %></span>
+            <span class="name-column"><%= item[i].name%></span></span>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="container-header mt-2">
+        <h1>Daftar Belanjaan (ForEach and Database)</h1>
+      </div>
+      <div class="index-table-wrapper">
+        <a href="/new"><button class="btn btn-primary float-end mb-2">Tambah</button></a>
+        <div class="clc"></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Actions</th>      
+          </tr>
+        </thead>
+        <tbody>
+          <% items.forEach((part)=>{%>
+            <tr>
+                <th scope="row"><%= part.id %></th>
+                <td><%= part.nama_barang %></td>
+                <td>
+                  <form action="/delete/<%= part.id %>" method="post">
+                      <button class="btn btn-danger" type="submit"> Delete</button>
+                  </form>
+                  <a href="/edit/<%= part.id %>"><button class="btn btn-warning">Edit</button></a>
+                </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
