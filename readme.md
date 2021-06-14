@@ -11,7 +11,7 @@ Express merupakan framework yang digunakan untuk mempermudah developer javascrip
 
 <h2>Set Up Latihan</h2>
 1. clone project ini<br>
-2. ``` npm install ```<br>
-3. apabila latihan ini masih belum bisa muncul tampilan, maka lakukan penginstalan package secara manual. ``` [npm init] ```,``` [npm install express] ```,``` [npm install ejs] ```.<br>
-4.Setelah itu run program menggunakan ``` npm run watch ```
+2.  npm install <br>
+3. apabila latihan ini masih belum bisa muncul tampilan, maka lakukan penginstalan package secara manual. [npm init],[npm install express], [npm install ejs].<br>
+4.Setelah itu run program menggunakan npm run watch 
 
